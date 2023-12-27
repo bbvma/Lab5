@@ -1,0 +1,45 @@
+﻿<Window x:Class="Lab5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab5"
+        mc:Ignorable="d"
+        Title="Книжный каталог" Height="650" Width="1200" WindowStartupLocation="CenterScreen">
+    <Grid ShowGridLines="True">
+        <Menu Height="20" VerticalAlignment="Top">
+            <MenuItem Header="Добавить" Name ="menuItemAdd" Click="menuItemAdd_Click"></MenuItem>
+            <MenuItem Header="Найти">
+                <MenuItem Header="Найти по названию" Name ="menuItemFindByTitle" Click="menuItemFindByTitle_Click"></MenuItem>
+                <MenuItem Header="Найти по имени автора" Name ="menuItemFindByAuthor" Click="menuItemFindByAuthor_Click"></MenuItem>
+                <MenuItem Header="Найти по ключевым словам" Name ="menuItemFindByKeywords" Click="menuItemFindByKeywords_Click"></MenuItem>
+                <MenuItem Header="Найти по ISBN" Name ="menuItemFindByISBN" Click="menuItemFindByISBN_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Выйти" Name ="menuItemExit" Click="menuItemExit_Click"></MenuItem>
+        </Menu>
+        <ListView Name="bookListView" Margin="10,40,10,10" Background="AliceBlue">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Заголовок" DisplayMemberBinding="{Binding Title}" Width="170"/>
+                    <GridViewColumn Header="Автор" DisplayMemberBinding="{Binding Author}" Width="150"/>
+                    <GridViewColumn Header="Жанры" Width="190">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Genres}" TextWrapping="Wrap"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Дата публикации" DisplayMemberBinding="{Binding PublicationDate}" Width="140"/>
+                    <GridViewColumn Header="Аннотация" Width="380">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Annotation}" TextWrapping="Wrap"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Номер ISBN" DisplayMemberBinding="{Binding ISBN}" Width="120"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

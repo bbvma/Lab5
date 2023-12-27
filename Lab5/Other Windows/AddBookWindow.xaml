@@ -1,0 +1,50 @@
+﻿<Window x:Class="Lab5.AddBookWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab5"
+        mc:Ignorable="d"
+        Title="Добавление книги" Height="400" Width="500" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Заголовок" Grid.Row="1" Grid.Column="1"/>
+        <TextBox x:Name="txtTitle" Width="120" Height="28" Grid.Column="2" VerticalAlignment="Top" Grid.Row="1" TextWrapping="Wrap"/>
+
+        <TextBlock Text="Автор" Grid.Column="1" Grid.Row="2"/>
+        <TextBox x:Name="txtAuthor" Grid.Row="2" Width="120" Height="28" Grid.Column="2" VerticalAlignment="Top" TextWrapping="Wrap"/>
+
+        <TextBlock Text="Жанры" Grid.Row="3"  Grid.Column="1"/>
+        <TextBox x:Name="txtGenres" Grid.Row="3" Width="120" Height="28" Grid.Column="2" VerticalAlignment="Top" TextWrapping="Wrap"/>
+
+        <TextBlock Text="Дата публикации" Grid.Row="4" Grid.Column="1"/>
+        <DatePicker Name="datePicker1" IsDropDownOpen="False" SelectedDateFormat="Short" Grid.Row="4" Grid.Column="2"  Width="120" Height="28" VerticalAlignment="Top"/>
+
+        <TextBlock Text="Аннотация" Grid.Row="5" Grid.Column="1"/>
+        <TextBox x:Name="txtAnnotation" Grid.Row="5" Grid.Column="2" Width="120" Height="28" VerticalAlignment="Top" TextWrapping="Wrap"/>
+
+        <TextBlock Text="ISBN" Grid.Column="1" Grid.Row="6"/>
+        <TextBox x:Name="txtISBN" Grid.Row="6" Grid.Column="2" Width="120" Height="28" VerticalAlignment="Top"  TextWrapping="Wrap"/>
+
+        <Button Grid.Row="8" Content="Добавить" Width="150" Height="30" Click="btnAddBook_Click" Grid.Column="1"/>
+        <Button Grid.Row="8" Content="Отмена" IsCancel="True" Width="150" Height="30" Grid.Column="2"/>
+    </Grid>
+</Window>
